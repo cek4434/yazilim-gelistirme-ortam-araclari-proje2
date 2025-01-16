@@ -4,6 +4,7 @@ import com.finalproject.dtos.PermanentTaskDTO;
 import com.finalproject.dtos.TemporaryTaskDTO;
 import com.finalproject.entities.Employee;
 import com.finalproject.entities.Task;
+import com.finalproject.exceptions.APIError;
 import com.finalproject.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,9 @@ public class TaskService {
     public Task addTemporaryTask(TemporaryTaskDTO temporaryTaskDTO) {
 
         Employee isEmployeIdExisist = employeeService.findByEmployeId(temporaryTaskDTO.getCalisanId());
+        if (isEmployeIdExisist == null) {
+            throw new APIError(404, "Çalışan bulunamadı");
+        }
 
         Task task = temporaryTaskDTO.toEntity();
         task.setEmployee(isEmployeIdExisist);
@@ -37,6 +41,9 @@ public class TaskService {
     public Task addPermanentTask(PermanentTaskDTO permanentTaskDTO) {
 
         Employee isEmployeIdExisist = employeeService.findByEmployeId(permanentTaskDTO.getCalisanId());
+        if (isEmployeIdExisist == null) {
+            throw new APIError(404, "Çalışan bulunamadı");
+        }
         Task task = permanentTaskDTO.toEntity();
         task.setEmployee(isEmployeIdExisist);
 
@@ -49,8 +56,14 @@ public class TaskService {
 
     public List getTasksByEmployeeId(Long id) {
         Employee isEmployeIdExisist = employeeService.findByEmployeId(id);
+        if (isEmployeIdExisist == null) {
+            throw new APIError(404, "Çalışan bulunamadı");
+        }
         return taskRepository.findByEmployeeId(isEmployeIdExisist.getId());
     }
+
+
+
 
 
 
