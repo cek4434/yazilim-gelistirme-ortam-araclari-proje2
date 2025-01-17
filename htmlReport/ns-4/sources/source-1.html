@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1254"> 
+  <title>Coverage Report > ContractEmployeeDTO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.finalproject.dtos</a>
+</div>
+
+<h1>Coverage Summary for Class: ContractEmployeeDTO (com.finalproject.dtos)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ContractEmployeeDTO</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (8/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    72.7%
+  </span>
+  <span class="absValue">
+    (16/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.finalproject.dtos;
+&nbsp;
+&nbsp;import com.finalproject.entities.ContractEmployee;
+&nbsp;import com.finalproject.entities.Employee;
+&nbsp;import com.finalproject.enums.CalisanTipi;
+&nbsp;import jakarta.validation.constraints.*;
+&nbsp;import org.springframework.format.annotation.DateTimeFormat;
+&nbsp;
+&nbsp;import java.time.LocalDate;
+&nbsp;
+<b class="fc">&nbsp;public class ContractEmployeeDTO {</b>
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;sicil no alanı zorunludur.&quot;)
+&nbsp;    @Size(min = 8, max = 8, message = &quot;sicil no alanı 8 haneli olmalıdır.&quot;)
+&nbsp;    private String sicilNo;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Ad alanı zorunludur.&quot;)
+&nbsp;    @Size(min = 3, max = 20, message = &quot;ad alanı 3 ile 20 harf arasında olmalıdır.&quot;)
+&nbsp;    private String ad;
+&nbsp;
+&nbsp;    @NotBlank(message = &quot;Soyad alanı zorunludur.&quot;)
+&nbsp;    @Size(min = 3, max = 20, message = &quot;soyad alanı 3 ile 20 harf arasında olmalıdır.&quot;)
+&nbsp;    private String soyad;
+&nbsp;
+&nbsp;    @NotNull(message = &quot;İşe giriş tarihi zorunludur.&quot;)
+&nbsp;    @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)
+&nbsp;    private LocalDate iseGirisTarihi;
+&nbsp;
+&nbsp;    @NotNull(message = &quot;Sözleşme bitiş tarihi zorunludur.&quot;)
+&nbsp;    @DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)
+&nbsp;    private LocalDate sozlesmeBitisTarihi;
+&nbsp;
+&nbsp;    @NotNull(message = &quot;Aylık ücret alanı zorunludur.&quot;)
+&nbsp;    @Positive(message = &quot;Aylık ücret pozitif bir değer olmalıdır.&quot;)
+&nbsp;    private Float aylikUcret;
+&nbsp;
+&nbsp;
+&nbsp;    //getters and setters
+&nbsp;
+&nbsp;    public String getSicilNo() {
+<b class="nc">&nbsp;        return sicilNo;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setSicilNo(String sicilNo) {
+<b class="fc">&nbsp;        this.sicilNo = sicilNo;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getAd() {
+<b class="nc">&nbsp;        return ad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAd(String ad) {
+<b class="fc">&nbsp;        this.ad = ad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LocalDate getIseGirisTarihi() {
+<b class="nc">&nbsp;        return iseGirisTarihi;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIseGirisTarihi(LocalDate iseGirisTarihi) {
+<b class="fc">&nbsp;        this.iseGirisTarihi = iseGirisTarihi;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getSoyad() {
+<b class="nc">&nbsp;        return soyad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setSoyad(String soyad) {
+<b class="fc">&nbsp;        this.soyad = soyad;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LocalDate getSozlesmeBitisTarihi() {
+<b class="nc">&nbsp;        return sozlesmeBitisTarihi;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setSozlesmeBitisTarihi(LocalDate sozlesmeBitisTarihi) {
+<b class="fc">&nbsp;        this.sozlesmeBitisTarihi = sozlesmeBitisTarihi;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Float getAylikUcret() {
+<b class="nc">&nbsp;        return aylikUcret;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAylikUcret(Float aylikUcret) {
+<b class="fc">&nbsp;        this.aylikUcret = aylikUcret;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public Employee toEntity() {
+<b class="fc">&nbsp;        ContractEmployee employee = new ContractEmployee();</b>
+<b class="fc">&nbsp;        employee.setSicilNo(this.sicilNo);</b>
+<b class="fc">&nbsp;        employee.setAd(this.ad);</b>
+<b class="fc">&nbsp;        employee.setSoyad(this.soyad);</b>
+<b class="fc">&nbsp;        employee.setIseGirisTarihi(this.iseGirisTarihi);</b>
+<b class="fc">&nbsp;        employee.setSozlesmeBitisTarihi(this.sozlesmeBitisTarihi);</b>
+<b class="fc">&nbsp;        employee.setAylikUcret(this.aylikUcret);</b>
+<b class="fc">&nbsp;        employee.setCalisanTipi(CalisanTipi.SOZLESMELI);</b>
+&nbsp;
+<b class="fc">&nbsp;        return employee;</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-01-16 23:18</div>
+</div>
+</body>
+</html>
