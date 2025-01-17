@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "f781bb94-ce61-4187-9207-b22b9422158c",
+		"name": "Final Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26808226"
+	},
+	"item": [
+		{
+			"name": "Employe",
+			"item": [
+				{
+					"name": "Add Permanent Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sicilNo\": \"78135712\",\r\n    \"ad\": \"Test\",\r\n    \"soyad\": \"Test\",\r\n    \"iseGirisTarihi\": \"2025-01-11\",\r\n    \"aylikUcret\" : 35550\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/employees/permanent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"permanent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Contract Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sicilNo\": \"12345367\",\r\n    \"ad\": \"Mustafa\",\r\n    \"soyad\": \"Elma\",\r\n    \"iseGirisTarihi\": \"2025-01-11\",\r\n    \"sozlesmeBitisTarihi\" : \"2028-01-12\",\r\n    \"aylikUcret\" : 35000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/employees/contract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"contract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Add Temporary Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calisanId\" :1 ,\r\n    \"gorevAdi\" : \"efeerr\",\r\n    \"gorevTanimi\" : \"deneme\",\r\n    \"gorevBaslangicTarihi\" : \"2025-01-11\",\r\n    \"gorevBitisTarihi\" : \"2025-01-11\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tasks/temporary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"temporary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Permanent Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calisanId\" : 1,\r\n    \"gorevAdi\" : \"kalıcı gorev\",\r\n    \"gorevTanimi\" : \"kalıcı\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tasks/permanent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"permanent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks By Employee Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
